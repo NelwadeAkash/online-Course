@@ -9,6 +9,7 @@ function InputElement(props) {
             <TextField label={props.label} name={props.name} type={props.type} 
             onChange={props.onChange} variant="outlined"
             onBlur={props.onBlur}
+            // size={props.size}
             ></TextField>
         </div>
     )

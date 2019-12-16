@@ -62,12 +62,12 @@ constructor(props) {
                    
                         <th>Course Id </th>
                         <th>Course Name</th>
-                        {/* <th>Course Iamges</th> */}
                         <th>Mentor Name</th>
-                         
                         <th>Course Price</th>
                         <th>Course rating</th>
+                        <th>Duration</th>
                         <th>Buy Now</th>
+                        
                        
                        </tr>
                    </thead>
@@ -75,18 +75,17 @@ constructor(props) {
                        {filterCourses.map((course) =>{
                            return(
                             <tr>
-                            <td>{course.courseId}</td>
-                           <td><tr>
-                            <img src={course.courseImg} width="100px" height="50px"/><br/>
-                            {course.courseName}</tr></td>
-                            <td>{course.Mentor}</td>
-                           
-                            <td>{course.coursePrice }</td>
-                            <td>{course.courseRating}</td>
-                            <td><a href="/">Buy_Now</a></td>
+                                    <td>{course.courseId}</td>
+                                <td><tr>
+                                    <img src={course.courseImg} width="100px" height="50px"/><br/>
+                                    {course.courseName}</tr></td>
+                                    <td>{course.Mentor}</td>
+                                    <td>{course.coursePrice }</td>
+                                    <td>{course.courseRating}</td>
+                                    <td>{course.duration}</td>
+                                    <td><a href={`Courselist/${course.courseName}`}>Buy_Now</a></td>
                             </tr>
                             
-                        
                            )
                        }
                        )}

@@ -7,22 +7,18 @@ export class Logout extends Component {
         this.state = {
              
         }
-
         sessionStorage.setItem('status','Logout')   
         sessionStorage.removeItem('statuss')
-
     }
     
     render() {
         return (
             <div class="App">
-
             <br></br>
                 <h4 class ="Logout">SuccessFully logout!!!!</h4>
                 <h4 class="Logout">To Login Again Please click below</h4>
                 <a class="Logout" href="/Login">Login</a>
-                <br></br>
-                
+            <br></br>
             </div>
         )
     }

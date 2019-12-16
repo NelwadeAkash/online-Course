@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import InputElement from './InputElement'
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 import user from './Data.json'
-import './Element.css'
+//import './Element.css'
+import {Button,Form,FormGroup,Label,Input} from 'reactstrap'
+//import {FacebookLoginButton} from 'react-social-login-buttons'
+import './login.css'
+import LabelElement from './LabelElement'
+
 
 export class Login extends Component {
 constructor(props) 
@@ -92,44 +97,65 @@ onBlur=(event)=>{
 
     render() {
         return (
-            <div class="App">
-                <form onSubmit={this.submitHandler} noValidate >
-                   <br/>
-                   <div>
-                       <h4>Welcome to login</h4><br></br>
-                   {/* <LabelElement name="UserName"></LabelElement> */}
-                    <InputElement label="username"
-                     name="username" 
-                     type={"email"} 
-                     value={this.state.username}
-                     onChange={this.change} 
-                     onBlur={this.onBlur}
-                       
-                     />
-                   </div> <h6>{this.state.usernameError}</h6><br/>
-                   
-                   <div>
-                    <InputElement label="password" 
-                    name="password"
-                    type={"password"}  
-                    value={this.state.password}
-                    onChange={this.change}
-                    onBlur={this.onBlur}
-                    />
-                    </div>
-                    <h6>{this.state.passwordError}</h6>
+            
+                <form onSubmit={this.submitHandler} noValidate className="login-form" >
+                    
+                    <h4><span className="font-weight-bold">www.CodeCourse</span>.com</h4>
                     <br/>
-                    <Button variant="outlined" 
-                    type="submit"
-                    color="primary"
-                    >
-                    Login </Button>
-                    <h6>{this.state.error}</h6>
+                   <br/>
+                   
+                       
+                       {/* <h5 className="text-center">Welcome</h5> */}
+                       <FormGroup>
+                                <LabelElement name="UserName"></LabelElement>
+                                {/* <label className="">UserName</label> */}
+                                    <InputElement label="username"
+                                    name="username" 
+                                    type={"email"} 
+                                    value={this.state.username}
+                                    onChange={this.change} 
+                                    onBlur={this.onBlur}
+                                    />
+                                    <h6>{this.state.usernameError}</h6>
+                        </FormGroup>
+                        <FormGroup>
+                                   <LabelElement name="Password"></LabelElement>
+                                    <InputElement label="password" 
+                                    name="password"
+                                    type={"password"}  
+                                    value={this.state.password}
+                                    onChange={this.change}
+                                    onBlur={this.onBlur}
+                                    size="50"
+                                    />
+                                    <h6>{this.state.passwordError}</h6>
+                        </FormGroup>
+                        
+                                    <Button className="btn-lg btn-primary btn-block active"
+                                     role="button" aria-pressed="true"
+                                     variant="outlined" 
+                                     type="submit"
+                                     color="primary"
+                                     size="50"
+                                    >
+                                    Login </Button>
+                                    <h6>{this.state.error}</h6>
+                                        {/* <br></br><h4>New uesr!!!</h4>
+                                            <a href="/Register">Click here</a>
+                                            */}
+                                            {/* <div className="text-center pt-3">
+                                              or continue with your social account
+
+                                            </div>
+                                            <FacebookLoginButton className="mt-3 mb-3"/> */}
+                                            <div  className="text-center">
+                                             <a href="/Register">Sign up</a>
+                                             <span className="p-2">|</span>  
+                                             <a href="/Register">Forgot Password</a>                                             
+                                            </div>
+                                        
                 </form>
-                <br></br><h4>New uesr!!!</h4>
-                <a href="/Register">Click here</a>
-                
-            </div>
+            
         )
     }
 }

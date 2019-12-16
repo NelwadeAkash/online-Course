@@ -4,6 +4,8 @@ import {Button,Navbar,FormControl,Radio,
     InputGroup,Nav,Image,Dropdown,DropdownButton} from 'react-bootstrap'
 import InputElement from './InputElement'
 import { object } from 'prop-types'
+import './login.css'
+
 // import { InputGroupRadio } from 'react-bootstrap/InputGroup'
 
 
@@ -160,17 +162,7 @@ export class Register extends Component {
                               onBlur={this.onBlur}
                               />
                                   <h6>{this.state.error.fullname}</h6>
-                            <br/>
                            
-                             <InputElement  
-                              label="password"
-                              name="password" 
-                              type={"password"}
-                              value={this.state.values.password}
-                              onChange={this.change} 
-                              onBlur={this.onBlur}
-                              />
-                               <h6>{this.state.error.password}</h6>
                             <br/>
                              <InputElement  
                               label="Email"
@@ -182,6 +174,18 @@ export class Register extends Component {
                               />
                              <h6> {this.state.error.email}</h6>
                             <br/>
+                            
+                           
+                           <InputElement  
+                            label="password"
+                            name="password" 
+                            type={"password"}
+                            value={this.state.values.password}
+                            onChange={this.change} 
+                            onBlur={this.onBlur}
+                            />
+                            <br/>
+                             <h6>{this.state.error.password}</h6>
                              <InputElement  
                               label="Phone"
                               name="phone" 

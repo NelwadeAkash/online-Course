@@ -6,6 +6,8 @@ import Home from './Home';
 import Register from './Register';
 import Courselist from '../Courselist';
 import Logout from './Logout';
+import { ProtectedRoute } from '../Router/ProtectedRoute';
+import BuyCourse from '../BuyCourse';
 
 
 
@@ -18,11 +20,12 @@ export class RouterElement extends Component {
                  <Switch>
                    <Route exact path='/' component={Login} />
                    <Route exact path='/login' component={Login}/>
-                   <Route exact path='/about' component={About}/>
-                   <Route exact path='/home' component={Home}/>
-                   <Route exact path='/Courselist' component={Courselist}/>
+                   <ProtectedRoute exact path='/about' component={About}/>
+                   <ProtectedRoute exact path='/home' component={Home}/>
+                   <ProtectedRoute exact path='/Courselist' component={Courselist}/>
+                   <ProtectedRoute exact path='/Courselist/:name' component={BuyCourse}/>
                    <Route exact path='/Register' component={Register}/>
-                   <Route exact path='/Logout' component={Logout}/>
+                   <ProtectedRoute exact path='/Logout' component={Logout}/>
                  </Switch>
                </Router>
 
